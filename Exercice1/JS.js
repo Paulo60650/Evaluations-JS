@@ -1,24 +1,27 @@
-function calcul()
+var PU = parseInt(prompt("Entrez le prix du produit"));
+var QUANT = parseInt(prompt("Entrez la quantité de produit désiré"));
+var TOT = PU * QUANT;
+var PORT = 0;
+var REM = 0;
+if(TOT < 500)
 {
-    var PU = parseINt(document.getElementById('PU'));
-    var pu = PU.value;
-    var QUANT = parseInt(document.getElementById('QUANT'));
-    var quant = QUANT.value;
-    var res = 0;
-    var i = 0;
-    while(document.getElementById('test3') != true)
-    {
-        document.getElementById('PU').value = "";
-        document.getElementById('QUANT').value = "";
-        res = res + (pu * quant);
-    }
+    PORT = (TOT * 2) / 100; 
+    if(PORT < 6)
+        {
+            PORT = 6;
+        }
 }
-var element_input = element_input.addEventListener("keypress", function control(event){
-    if (event.which === 13)
-        calcul()  
-});
-var element_button = document.getElementById('button');
-element_button.addEventListener("click", function(){
-    calcul();
-});
-
+if(TOT > 100 && TOT < 200)
+{
+    REM = (TOT * 5) / 100;
+}
+else if(TOT >= 200)
+{
+    REM = (TOT * 10) / 100;
+}
+TOT = TOT + PORT - REM;
+alert("Vous disposez d'une remise de " + REM + " euros \n Vous avez " + PORT + " euros de frais de port.\n Vous devez un total de " + TOT + " euros")
+if(confirm("Voulez vous recommencer ?") == true)
+{
+    window.location.reload();
+}
