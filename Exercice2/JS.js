@@ -1,4 +1,4 @@
-var nb = window.prompt("Veuillez entrer un nombre");
+var nb = parseInt(prompt("Veuillez entrer un nombre"));
 var i = 0;
 var res = 0;
 while(++i < nb)

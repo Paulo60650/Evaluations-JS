@@ -5,16 +5,16 @@ var v = 0;
 
 while(age < 100)
 {
-    var age = parseInt(prompt("Quelle est l'age de la personne ?"));
+    age = parseInt(prompt("Quelle est l'age de la personne ?"));
     if(age < 20)
     {
     j++;
     }
-    if(age >= 20 && age <= 40)
+    else if(age >= 20 && age <= 40)
     {
     m++;
     }
-    if(age > 40)
+    else
     {
     v++;
     }
