@@ -30,14 +30,6 @@ function _calcul()
     var TOT = PU * QUANT;
     var PORT = 0;
     var REM = 0;
-    if(TOT < 500)
-    {
-        PORT = (TOT * 2) / 100; 
-        if(PORT < 6)
-        {
-            PORT = 6;
-        }
-    }
     if(TOT > 100 && TOT < 200)
     {
         REM = (TOT * 5) / 100;
@@ -46,7 +38,16 @@ function _calcul()
     {
         REM = (TOT * 10) / 100;
     }
-    TOT = TOT + PORT - REM;
+    TOT = TOT - REM;
+    if(TOT < 500)
+    {
+        PORT = (TOT * 2) / 100; 
+        if(PORT < 6)
+        {
+            PORT = 6;
+        }
+    }
+    TOT = TOT + PORT;
     alert("Vous disposez d'une remise de " + REM + " euros \n Vous avez " + PORT + " euros de frais de port.\n Vous devez un total de " + TOT + " euros")
     if(confirm("Voulez vous recommencer ?"))
     {
